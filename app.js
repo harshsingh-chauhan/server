@@ -11,7 +11,7 @@ require('dotenv').config()
 const cors = require('cors');
 app.use(
     cors({
-        origin: "http://localhost:5173",
+        origin: "https://course-booking.netlify.app",
         credentials:true,
     })
 )
