@@ -40,7 +40,7 @@ class UserController {
       if (!isMatch) {
         return res.status(400).json({ message: "Invalid crerdentials" });
       }
-      var token = jwt.sign({ ID: user._id }, 'kuchbi@34');
+      var token = jwt.sign({ ID: user._id }, process.env.JWT_SCERET,{expiresIn: "2d"});//process.env.JWT_SCERET
     //   console.log(token);
       //send token  in http  only cookie
       res.cookie("token",token,{

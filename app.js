@@ -6,6 +6,8 @@ const web = require('./routes/web')
 const connectDB = require('./db/connectDB')
 const fileUpload = require('express-fileupload')
 
+require('dotenv').config()
+
 const cors = require('cors');
 app.use(
     cors({
@@ -29,4 +31,4 @@ app.use(fileUpload({
 
 
 app.use('/api',web)
-app.listen(port,console.log('server start localhost : 3000'))
+app.listen(process.env.PORT,console.log('server start localhost : 3000'))
